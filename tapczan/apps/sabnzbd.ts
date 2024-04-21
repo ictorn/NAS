@@ -81,12 +81,12 @@ export default (namespace: Namespace) => {
                     },
                     {
                         mountPath: "/downloads",
-                        name: "data",
+                        name: "apps",
                         subPath: "downloads"
                     },
                     {
                         mountPath: "/incomplete-downloads",
-                        name: "data",
+                        name: "apps",
                         subPath: ".tmp"
                     }
                 ]

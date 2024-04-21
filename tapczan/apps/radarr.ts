@@ -76,7 +76,7 @@ export default (namespace: Namespace, downloader: Service) => {
                     },
                     {
                         mountPath: "/downloads",
-                        name: "data",
+                        name: "apps",
                         subPath: "downloads"
                     }
                 ]

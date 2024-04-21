@@ -76,7 +76,7 @@ export default (namespace: Namespace, downloader: Service) => {
                     },
                     {
                         mountPath: "/downloads",
-                        name: "data",
+                        name: "apps",
                         subPath: "downloads"
                     }
                 ]
@@ -85,7 +85,7 @@ export default (namespace: Namespace, downloader: Service) => {
     }, {
         dependsOn: [namespace, downloader],
         parent: namespace
-    })
+    });
 
     const service = new Service("sonarr", {
         metadata: {
@@ -125,7 +125,7 @@ export default (namespace: Namespace, downloader: Service) => {
     }, {
         dependsOn: service,
         parent: namespace
-    });
+    })
 
     return {
         pod: pod,
