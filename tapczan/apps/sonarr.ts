@@ -9,7 +9,7 @@ const sonarr = config.requireObject<{
 }>("sonarr");
 const paths = config.requireObject<{
     data: string;
-    apps: string;
+    tapczan: string;
 }>("paths");
 
 export default (namespace: Namespace, downloader: Service) => {
@@ -40,7 +40,7 @@ export default (namespace: Namespace, downloader: Service) => {
                     name: "apps",
                     hostPath: {
                         type: "Directory",
-                        path: paths.apps
+                        path: paths.tapczan
                     }
                 }
             ],

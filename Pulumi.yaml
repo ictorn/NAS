@@ -7,7 +7,7 @@ config:
   paths:
     value:
       data: "/srv/dev-disk-by-uuid-c6e5ca4f-0104-441f-9e5e-037ba7a62d24/"
-      apps: "/srv/dev-disk-by-uuid-cab93a9a-f299-4304-9567-ec8dde889f26/tapczan/"
+      tapczan: "/srv/dev-disk-by-uuid-cab93a9a-f299-4304-9567-ec8dde889f26/tapczan/"
   sabnzbd:
     value:
       image: "lscr.io/linuxserver/sabnzbd"

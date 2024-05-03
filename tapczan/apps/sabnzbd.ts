@@ -9,7 +9,7 @@ const sabnzbd = config.requireObject<{
 }>("sabnzbd");
 const paths = config.requireObject<{
     data: string;
-    apps: string;
+    tapczan: string;
 }>("paths");
 
 export default (namespace: Namespace) => {
@@ -40,7 +40,7 @@ export default (namespace: Namespace) => {
                     name: "apps",
                     hostPath: {
                         type: "Directory",
-                        path: paths.apps
+                        path: paths.tapczan
                     }
                 }
             ],
