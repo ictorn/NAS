@@ -124,7 +124,7 @@ export default (namespace: Namespace) => {
         spec: {
             entryPoints: ["websecure"],
             routes: [{
-                match: "Host(`sab.tapczan.lan`) || Host(`sabnzbd.tapczan.lan`)",
+                match: "Host(`sab.nas.lan`) || Host(`sabnzbd.nas.lan`)",
                 kind: "Rule",
                 services: [{
                     name: "sabnzbd",

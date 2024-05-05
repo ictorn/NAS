@@ -2,7 +2,7 @@ name: NAS
 runtime: nodejs
 description: apps and services
 config:
-  kubernetes:context: tapczan
+  kubernetes:context: nas
   kubernetes:namespace: default
   paths:
     value:

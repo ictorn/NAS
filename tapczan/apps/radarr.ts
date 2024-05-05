@@ -114,7 +114,7 @@ export default (namespace: Namespace, downloader: Service) => {
         spec: {
             entryPoints: ["websecure"],
             routes: [{
-                match: "Host(`radarr.tapczan.lan`)",
+                match: "Host(`radarr.nas.lan`)",
                 kind: "Rule",
                 services: [{
                     name: "radarr",
