@@ -11,6 +11,7 @@ const paths = config.requireObject<{
     data: string;
     tapczan: string;
 }>("paths");
+const domain: String = config.require("domain");
 
 export default (namespace: Namespace, downloader: Service) => {
     const pod = new Pod('sonarr', {
@@ -114,7 +115,7 @@ export default (namespace: Namespace, downloader: Service) => {
         spec: {
             entryPoints: ["websecure"],
             routes: [{
-                match: "Host(`sonarr.ictorn.dev`)",
+                match: "Host(`sonarr." + domain + "`)",
                 kind: "Rule",
                 services: [{
                     name: "sonarr",

@@ -6,6 +6,8 @@ backend:
 config:
   kubernetes:context: nas
   kubernetes:namespace: default
+  domain:
+    value: "ictorn.dev"
   paths:
     value:
       data: "/srv/dev-disk-by-uuid-c6e5ca4f-0104-441f-9e5e-037ba7a62d24/"

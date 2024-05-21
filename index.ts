@@ -1,5 +1,6 @@
 import * as tapczan from "./tapczan"
 import { CustomResource } from "@pulumi/kubernetes/apiextensions"
+import {Config} from "@pulumi/pulumi";
 
 const middleware: CustomResource = new CustomResource("omv", {
     apiVersion: "traefik.io/v1alpha1",
@@ -17,6 +18,9 @@ const middleware: CustomResource = new CustomResource("omv", {
     }
 })
 
+const config: Config = new Config;
+const domain: String = config.require("domain");
+
 new CustomResource("omv", {
     apiVersion: "traefik.io/v1alpha1",
     kind: "IngressRoute",
@@ -27,7 +31,7 @@ new CustomResource("omv", {
     spec: {
         entryPoints: ["websecure"],
         routes: [{
-            match: "Host(`nas.ictorn.dev`)",
+            match: "Host(`nas." + domain + "`)",
             kind: "Rule",
             middlewares: [{ name: "omv" }],
             services: [{

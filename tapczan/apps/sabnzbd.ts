@@ -11,6 +11,7 @@ const paths = config.requireObject<{
     data: string;
     tapczan: string;
 }>("paths");
+const domain: String = config.require("domain");
 
 export default (namespace: Namespace) => {
     const pod = new Pod('sabnzbd', {
@@ -124,7 +125,7 @@ export default (namespace: Namespace) => {
         spec: {
             entryPoints: ["websecure"],
             routes: [{
-                match: "Host(`sabnzbd.ictorn.dev`)",
+                match: "Host(`sabnzbd." + domain + "`)",
                 kind: "Rule",
                 services: [{
                     name: "sabnzbd",
