@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="UP" type="ShConfigurationType" activateToolWindowBeforeRun="false" focusToolWindowBeforeRun="true">
-    <option name="SCRIPT_TEXT" value="pulumi up -s local -y -f --suppress-outputs" />
+    <option name="SCRIPT_TEXT" value="PULUMI_CONFIG_PASSPHRASE= pulumi up -s omv -y -f --suppress-outputs" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />
     <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/.IaC" />
+    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
     <option name="INTERPRETER_PATH" value="/opt/homebrew/bin/fish" />
     <option name="INTERPRETER_OPTIONS" value="" />

@@ -114,7 +114,7 @@ export default (namespace: Namespace, downloader: Service) => {
         spec: {
             entryPoints: ["websecure"],
             routes: [{
-                match: "Host(`sonarr.nas.lan`)",
+                match: "Host(`sonarr.ictorn.dev`)",
                 kind: "Rule",
                 services: [{
                     name: "sonarr",

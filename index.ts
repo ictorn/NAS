@@ -27,7 +27,7 @@ new CustomResource("omv", {
     spec: {
         entryPoints: ["websecure"],
         routes: [{
-            match: "Host(`omv.nas.lan`)",
+            match: "Host(`nas.ictorn.dev`)",
             kind: "Rule",
             middlewares: [{ name: "omv" }],
             services: [{
