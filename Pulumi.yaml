@@ -15,11 +15,11 @@ config:
   sabnzbd:
     value:
       image: "lscr.io/linuxserver/sabnzbd"
-      tag: "version-4.3.1"
+      tag: "version-4.3.2"
   sonarr:
     value:
       image: "lscr.io/linuxserver/sonarr"
-      tag: "version-4.0.4.1491"
+      tag: "version-4.0.5.1710"
   radarr:
     value:
       image: "lscr.io/linuxserver/radarr"
