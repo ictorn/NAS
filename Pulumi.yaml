@@ -23,4 +23,4 @@ config:
   radarr:
     value:
       image: "lscr.io/linuxserver/radarr"
-      tag: "version-5.6.0.8846"
+      tag: "version-5.7.0.88826"
