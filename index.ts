@@ -1,6 +1,6 @@
 import * as tapczan from "./tapczan"
 import { CustomResource } from "@pulumi/kubernetes/apiextensions"
-import {Config} from "@pulumi/pulumi";
+import { Config } from "@pulumi/pulumi";
 
 const middleware: CustomResource = new CustomResource("omv", {
     apiVersion: "traefik.io/v1alpha1",
