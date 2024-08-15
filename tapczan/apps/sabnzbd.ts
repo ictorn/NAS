@@ -131,7 +131,10 @@ export default (namespace: Namespace) => {
                     name: "sabnzbd",
                     port: 80
                 }]
-            }]
+            }],
+            tls: {
+                secretName: "tapczan.le"
+            }
         }
     }, {
         dependsOn: service,

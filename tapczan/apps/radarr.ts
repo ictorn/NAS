@@ -121,7 +121,10 @@ export default (namespace: Namespace, downloader: Service) => {
                     name: "radarr",
                     port: 80
                 }]
-            }]
+            }],
+            tls: {
+                secretName: "tapczan.le"
+            }
         }
     }, {
         dependsOn: service,
