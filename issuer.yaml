@@ -1,0 +1,40 @@
+kind: Secret
+apiVersion: v1
+type: Opaque
+metadata:
+  name: dev-cloudflare-api-token
+  namespace: cert-manager
+data:
+  value: ""
+---
+kind: ClusterIssuer
+apiVersion: cert-manager.io/v1
+metadata:
+  name: dev-cloudflare-issuer
+  namespace: cert-manager
+spec:
+  acme:
+    email: ""
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: dev-cloudflare-issuer-account-key
+    solvers:
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: dev-cloudflare-api-token
+              key: value
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tapczan
+  namespace: tapczan
+spec:
+  secretName: tapczan.le
+  dnsNames:
+  - subdomain1.example.com
+  - subdomain2.example.com
+  issuerRef:
+    kind: ClusterIssuer
+    name: dev-cloudflare-issuer
