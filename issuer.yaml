@@ -33,8 +33,9 @@ metadata:
 spec:
   secretName: tapczan.le
   dnsNames:
-  - subdomain1.example.com
-  - subdomain2.example.com
+  - sonarr.ictorn.dev
+  - radarr.ictorn.dev
+  - sabnzbd.ictorn.dev
   issuerRef:
     kind: ClusterIssuer
     name: dev-cloudflare-issuer
