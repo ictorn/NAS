@@ -15,7 +15,7 @@ config:
   sabnzbd:
     value:
       image: "lscr.io/linuxserver/sabnzbd"
-      tag: "version-4.3.2"
+      tag: "version-4.3.3"
   sonarr:
     value:
       image: "lscr.io/linuxserver/sonarr"
