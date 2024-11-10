@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tapczan
+  namespace: tapczan
+spec:
+  secretName: tapczan.le
+  dnsNames:
+  - sonarr.ictorn.dev
+  - radarr.ictorn.dev
+  - sabnzbd.ictorn.dev
+  - yt.ictorn.dev
+  issuerRef:
+    kind: ClusterIssuer
+    name: dev-cloudflare-issuer

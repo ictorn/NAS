@@ -24,3 +24,7 @@ config:
     value:
       image: "lscr.io/linuxserver/radarr"
       tag: "version-5.14.0.9383"
+  pinchflat:
+    value:
+      image: "ghcr.io/kieraneglin/pinchflat"
+      tag: "v2024.10.30"
