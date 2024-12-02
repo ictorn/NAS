@@ -1,4 +1,4 @@
-import { Namespace, Pod, Service } from "@pulumi/kubernetes/core/v1";
+import { Pod, Service } from "@pulumi/kubernetes/core/v1";
 import { CustomResource } from "@pulumi/kubernetes/apiextensions";
 import { Config } from "@pulumi/pulumi";
 
@@ -13,11 +13,11 @@ const paths = config.requireObject<{
 }>("paths");
 const domain: String = config.require("domain");
 
-export default (namespace: Namespace, downloader: Service) => {
+export default (downloader: Service) => {
     const pod = new Pod('radarr', {
         metadata: {
             name: "radarr",
-            namespace: namespace.metadata.name,
+            namespace: "tapczan",
             labels: {
                 "app.kubernetes.io/name": "radarr",
                 "version": radarr.tag
@@ -84,14 +84,13 @@ export default (namespace: Namespace, downloader: Service) => {
             }]
         }
     }, {
-        dependsOn: [namespace, downloader],
-        parent: namespace
+        dependsOn: [downloader]
     })
 
     const service = new Service("radarr", {
         metadata: {
             name: "radarr",
-            namespace: namespace.metadata.name,
+            namespace: "tapczan",
         },
         spec: {
             selector: { "app.kubernetes.io/name": "radarr" },
@@ -101,8 +100,7 @@ export default (namespace: Namespace, downloader: Service) => {
             }]
         }
     }, {
-        dependsOn: pod,
-        parent: namespace
+        dependsOn: pod
     });
 
     const route = new CustomResource("radarr", {
@@ -110,7 +108,7 @@ export default (namespace: Namespace, downloader: Service) => {
         kind: "IngressRoute",
         metadata: {
             name: "radarr",
-            namespace: namespace.metadata.name
+            namespace: "tapczan"
         },
         spec: {
             entryPoints: ["websecure"],
@@ -127,8 +125,7 @@ export default (namespace: Namespace, downloader: Service) => {
             }
         }
     }, {
-        dependsOn: service,
-        parent: namespace
+        dependsOn: service
     });
 
     return {

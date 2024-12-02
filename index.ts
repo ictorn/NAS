@@ -44,7 +44,6 @@ new CustomResource("omv", {
 
 export const status = {
     tapczan: {
-        namespace: tapczan.namespace.status,
         pods: {
             sabnzbd: tapczan.apps.sabnzbd.pod.status,
             sonarr: tapczan.apps.sonarr.pod.status

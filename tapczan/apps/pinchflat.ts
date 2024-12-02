@@ -1,4 +1,4 @@
-import { Namespace, Pod, Service } from "@pulumi/kubernetes/core/v1";
+import { Pod, Service } from "@pulumi/kubernetes/core/v1";
 import { CustomResource } from "@pulumi/kubernetes/apiextensions";
 import { Config } from "@pulumi/pulumi";
 
@@ -13,11 +13,11 @@ const paths = config.requireObject<{
 }>("paths");
 const domain: String = config.require("domain");
 
-export default (namespace: Namespace) => {
+export default () => {
     const pod = new Pod('pinchflat', {
         metadata: {
             name: "pinchflat",
-            namespace: namespace.metadata.name,
+            namespace: "tapczan",
             labels: {
                 "app.kubernetes.io/name": "pinchflat",
                 "version": pinchflat.tag
@@ -78,15 +78,12 @@ export default (namespace: Namespace) => {
                 ]
             }]
         }
-    }, {
-        dependsOn: [namespace],
-        parent: namespace
     });
 
     const service = new Service("pinchflat", {
         metadata: {
             name: "pinchflat",
-            namespace: namespace.metadata.name,
+            namespace: "tapczan",
         },
         spec: {
             selector: { "app.kubernetes.io/name": "pinchflat" },
@@ -96,8 +93,7 @@ export default (namespace: Namespace) => {
             }]
         }
     }, {
-        dependsOn: pod,
-        parent: namespace
+        dependsOn: pod
     });
 
     const route = new CustomResource("pinchflat", {
@@ -105,7 +101,7 @@ export default (namespace: Namespace) => {
         kind: "IngressRoute",
         metadata: {
             name: "pinchflat",
-            namespace: namespace.metadata.name
+            namespace: "tapczan"
         },
         spec: {
             entryPoints: ["websecure"],
@@ -122,8 +118,7 @@ export default (namespace: Namespace) => {
             }
         }
     }, {
-        dependsOn: service,
-        parent: namespace
+        dependsOn: service
     })
 
     return {
