@@ -15,7 +15,7 @@ config:
   sabnzbd:
     value:
       image: "lscr.io/linuxserver/sabnzbd"
-      tag: "version-4.3.3"
+      tag: "version-4.4.0"
   sonarr:
     value:
       image: "lscr.io/linuxserver/sonarr"
@@ -27,4 +27,4 @@ config:
   pinchflat:
     value:
       image: "ghcr.io/kieraneglin/pinchflat"
-      tag: "v2024.11.27"
+      tag: "v2024.12.10"
