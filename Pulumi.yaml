@@ -23,7 +23,7 @@ config:
   radarr:
     value:
       image: "lscr.io/linuxserver/radarr"
-      tag: "version-5.15.1.9463"
+      tag: "version-5.16.3.9541"
   pinchflat:
     value:
       image: "ghcr.io/kieraneglin/pinchflat"
