@@ -19,11 +19,11 @@ config:
   sonarr:
     value:
       image: "lscr.io/linuxserver/sonarr"
-      tag: "version-4.0.11.2680"
+      tag: "version-4.0.12.2823"
   radarr:
     value:
       image: "lscr.io/linuxserver/radarr"
-      tag: "version-5.16.3.9541"
+      tag: "version-5.17.2.9580"
   pinchflat:
     value:
       image: "ghcr.io/kieraneglin/pinchflat"
