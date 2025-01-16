@@ -27,4 +27,4 @@ config:
   pinchflat:
     value:
       image: "ghcr.io/kieraneglin/pinchflat"
-      tag: "v2025.1.3"
+      tag: "v2025.1.14"
