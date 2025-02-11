@@ -1,0 +1,12 @@
+write-kubeconfig-mode: "0644"
+cluster-init: true
+disable:
+  - "traefik"
+  - "servicelb"
+tls-san:
+  - "k3s.local"
+  - "k3s.localhost"
+  - "cluster.localhost"
+  - "nas.ictorn.dev"
+service-node-port-range: "1-32767"
+disable-helm-controller: true
