@@ -19,7 +19,7 @@ config:
   sonarr:
     value:
       image: "lscr.io/linuxserver/sonarr"
-      tag: "version-4.0.12.2823"
+      tag: "version-4.0.13.2932"
   radarr:
     value:
       image: "lscr.io/linuxserver/radarr"
